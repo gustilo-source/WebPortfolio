@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Home | Gustilo</title>
+    <link rel="icon" type="image/x-icon" href="images/logo1.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<style>
+     *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: url('images/msf.png') no-repeat center center fixed;
+            background-size: cover;
+        
+        }
+
+    @font-face {
+            font-family: 'Poppin-Regular';
+            src: url('fonts/Poppin-Regular.otf') format('opentype'); 
+        }
+
+        @font-face {
+            font-family: 'Brittany';
+            src: url('fonts/Brittany.otf') format('opentype'); 
+        }
+        @font-face {
+            font-family: 'Brittanyhustle';
+            src: url('fonts/Brittanyhustle.otf') format('opentype'); 
+        }
+        @font-face {
+            font-family: 'poppins';
+            src: url('fonts/poppins_regular.ttf') format('opentype'); 
+        }
+        @font-face {
+            font-family: 'Akira Expanded Demo';
+            src: url('fonts/Akira Expanded Demo.otf') format('opentype'); 
+        }
+
+       /* Navbar styles */
+       .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.1rem 5rem;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+            color: #e07d50;
+        }
+
+        /* Responsive navbar */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+                padding: 0.5rem 0;
+            }
+        }
+
+        .hero-header {
+  flex: 1 0 auto;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.header-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+.intro-box {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 90%;
+  width: 600px;
+}
+
+.welcome-text {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'poppins';
+}
+
+.main-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Akira Expanded Demo', bold;
+}
+
+.sub-text {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  font-family: 'poppins';
+}
+
+/* Extra small devices (e.g., 320px) */
+@media (max-width: 320px) {
+  .intro-box {
+    padding: 1rem;
+  }
+
+  .main-heading {
+    font-size: 1.2rem;
+  }
+
+  .welcome-text,
+  .sub-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile (phones) */
+@media (max-width: 480px) {
+  .intro-box {
+    padding: 1.2rem;
+  }
+
+  .main-heading {
+    font-size: 1.4rem;
+  }
+
+  .welcome-text,
+  .sub-text {
+    font-size: 1rem;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .intro-box {
+    padding: 1.8rem;
+    width: 90%;
+  }
+
+  .main-heading {
+    font-size: 1.7rem;
+  }
+
+  .welcome-text,
+  .sub-text {
+    font-size: 1rem;
+  }
+}
+/* Laptops (small desktops) */
+@media (min-width: 1024px) {
+  .intro-box {
+    padding: 3rem;
+    width: 700px;
+  }
+
+  .main-heading {
+    font-size: 2.3rem;
+  }
+
+  .welcome-text,
+  .sub-text {
+    font-size: 1.2rem;
+  }
+}
+
+.cafe-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0; 
+    height: 100vh; 
+    background: url('images/bg2.png') no-repeat center center/cover; 
+}
+.cafe-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    width: 100%;
+    background:transparent;
+    padding: 20px;
+    border-radius: 10px;
+    align-items: center;
+    gap: 5px;
+}
+.text-container {
+    flex: 1;
+    min-width: 300px;
+    box-sizing: border-box;
+    padding-right: 5rem; 
+    margin-left: -100px; 
+}
+
+.text-container h1 {
+    text-transform: uppercase;
+    font-size: 40px;
+    font-family: 'Akira Expanded Demo', bold;
+    margin-top: -19px; 
+    margin-bottom: -5px; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.text-container p {
+    font-size: 18px; 
+    line-height: 1.6; 
+    color: #fff; 
+    text-align: justify;
+    max-width: 800px;  
+    width: 100%;
+    margin: 0 auto;
+    font-family:  'poppins';
+
+}
+
+.about-btn {
+  display: inline-block;
+  padding: 30px 90px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.about-btn::before {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.about-btn:hover {
+  color: #D6AC4B; 
+  transform: translateX(4px);
+}
+
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+   
+}
+.image-container img {
+    width: 65%;
+    max-width: 800px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: -90px;
+} 
+
+/* 1025px and below (small laptops) */
+@media (max-width: 1025px) {
+  .cafe-container {
+    flex-direction: row;
+    gap: 20px;
+    padding: 40px 20px;
+  }
+
+  .text-container {
+    padding-right: 2rem;
+    margin-left: -40px;
+  }
+
+  .text-container h1 {
+    font-size: 36px;
+  }
+
+  .text-container p {
+    font-size: 16px;
+  }
+
+  .about-btn {
+    padding: 25px 70px;
+    font-size: 18px;
+  }
+
+  .image-container img {
+    width: 60%;
+    margin-bottom: -70px;
+  }
+}
+
+/* 768px and below (tablets) */
+@media (max-width: 768px) {
+  .cafe-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+  }
+
+  .text-container {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .text-container h1 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+
+  .text-container p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .about-btn {
+    padding: 20px 60px;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .image-container img {
+    width: 70%;
+    margin-bottom: -60px;
+  }
+}
+
+/* 480px and below (phones) */
+@media (max-width: 480px) {
+
+  .text-container h1 {
+    font-size: 24px;
+  }
+
+  .text-container p {
+    font-size: 14px;
+  }
+
+  .about-btn {
+    padding: 15px 50px;
+    font-size: 14px;
+  }
+
+    .cafe-section {
+    height: auto;
+    padding: 20px 10px;
+    flex-direction: column;
+    background-size: cover;
+  }
+
+  .cafe-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 10px;
+  }
+
+  .image-container {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .image-container img {
+    width: 50%;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 320px) {
+  .cafe-section {
+    height: auto;
+    padding: 20px 10px;
+    flex-direction: column;
+    background-size: cover;
+  }
+
+  .cafe-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    padding: 10px;
+  }
+
+  .image-container {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+
+  .image-container img {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+
+  .text-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .text-container h1 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+
+  .text-container p {
+    font-size: 14px;
+    padding: 0 5px;
+  }
+
+  .about-btn {
+    padding: 15px 40px;
+    font-size: 14px;
+    border-radius: 30px;
+  }
+}
+
+
+/* Circular Skill Bars Section */
+.skills-section {
+    padding: 90px 190px;
+    background-image: url('images/bg.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 100px;
+    text-align: center;   
+    color: #4a3629; 
+    font-family: 'Akira Expanded Demo', bold;
+}
+
+.skill-container {
+    display: flex;
+    justify-content: center;
+    gap: 7rem;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    max-width: 200%; 
+}
+
+.skill-circle {
+    position: relative;
+    width: 250px;  
+    height: 250px;
+    border-radius: 50%;
+    background-color: #4a3629;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 0 200px; 
+    min-width: 120px; 
+    max-width: 250px;
+    transition: all 0.3s ease;
+}
+
+.skill-circle canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.skill-circle span {
+    font-size: 20px;
+    font-weight: bold;
+    z-index: 2;
+    color: white;
+}
+
+
+.works {
+    margin: 0;
+    padding: 9rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url('images/bg2.png') no-repeat center center / cover;
+}
+
+section h2 {
+    font-size: rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 0.05em;
+    font-family: 'Akira Expanded Demo';
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr); 
+    width: 100%;
+    max-width: 1200px; 
+}
+
+figure {
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+img {
+    width: 100%;
+    display: block;
+    aspect-ratio: 10 / 12;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+figure::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(0, 0, 0, 0.5);
+    transform-origin: center;
+    transform: scale(0);
+    opacity: 0;
+    border-radius: 50%;
+    transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    font-size: 2rem;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(1rem);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+a:hover figure::after,
+a:focus figure::after {
+    opacity: 1;
+    transform: scale(2.5);
+}
+
+a:hover figcaption,
+a:focus figcaption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+a:hover img,
+a:focus img {
+    transform: scale(1.1);
+}
+
+
+/* Responsive for medium devices (up to 480px) */
+@media (max-width: 480px) {
+    section h2 {
+        font-size: 2rem;
+    }
+
+    figcaption {
+        font-size: 1.5rem; 
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem; /
+    }
+
+    a:hover img,
+    a:focus img {
+        transform: scale(1.1); /
+    }
+
+    figure::after {
+        width: 150%; 
+        height: 150%; 
+    }
+
+    
+    ul {
+        gap: 1rem; 
+    }
+}
+
+/* Media query for very small screens (320px) */
+@media (max-width: 320px) {
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    figcaption {
+        font-size: 1rem;
+    }
+
+    ul {
+        grid-template-columns: 1fr; 
+        justify-items: center; 
+        align-items: center;
+        width: 100%;
+    }
+
+    a:hover img,
+    a:focus img {
+        transform: scale(1.1); 
+    }
+}
+
+
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #4a3629;
+    color: #ffffff;
+    padding: 1rem 2rem 0.5rem 2rem;
+    margin-top: 0.1rem;
+    box-sizing: border-box;
+}
+.footer .logo-icon {
+    font-size: 3rem;
+    margin-right: 0.5rem;
+  
+}
+
+    .footer h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer a {
+      color: #9ca3af;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #e07d50;
+    }
+
+    .footer .underline {
+        content: "";
+  display: block;
+  width: 80px; 
+  height: 2px;
+  background-color: #fff;
+  margin-top: 8px;
+  margin-left: 0; 
+    }
+
+    .footer .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .footer .social-icons a {
+      color: #ced2d8;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: #e07d50;
+    }
+    .footer .colft ul {
+    list-style-type: none; 
+    padding-left: 0; 
+ 
+}
+
+
+    /* Footer Columns */
+    .rowft {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .colft {
+      flex: 1;
+      min-width: 250px;
+      margin: 0.5rem;
+      text-align: left;
+    }
+
+    .colft h3 {
+      font-size: 1.25rem;
+      color: #e07d50;
+      margin-bottom: 1rem;
+    }
+
+    .colft p,
+    .colft a {
+      font-size: 0.875rem;
+      color: #d1d5db;
+    
+    }
+
+    .colft a:hover {
+      color: #e07d50;
+    }
+
+    footer a,
+    .footer p {
+      color: #9ca3af;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover,
+    .footer p:hover {
+      color:  #e07d50; 
+    }
+    /* Footer Responsiveness */
+    @media (max-width: 768px) {
+      .rowft {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .colft {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .footer .underline {
+        margin-left: auto;
+        margin-right: auto;
+        }
+    .footer .social-icons a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    }
+    
+ 
+</style>
+
+<body>
+    <header class="hero-header">
+        <!-- Navbar -->
+        <div class="navbar">
+            <div class="logo-container">
+                <i class="fas fa-coffee logo-icon"></i>
+                <span class="logo-text">Gustilo</span>
+            </div>
+            <button id="menu-toggle" class="menu-toggle">
+                <i class="fas fa-bars menu-icon"></i>
+            </button>
+            <nav id="nav-links" class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="activity.html" class="nav-link">Activity</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    
+        <!-- Text on top of image -->
+        <div class="header-content">
+            <div class="intro-box">
+                <p class="welcome-text">Welcome to Gustilo website</p>
+                <h1 class="main-heading">My Journey So Far</h1>
+                <p class="sub-text">Dive deeper into who I am.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="cafe-wrapper">
+       
+    <div class="cafe-section">
+        <div class="cafe-container">
+            <div class="image-container">
+                <div class="relative">
+                    <img alt="ihla-pics" class="rounded-lg" src="images/ihla.png" width="500"/>
+                    </div>
+                </div>
+            </div>
+            <div class="text-container">
+                <h1>GUSTILO ELLA </h1>
+                <p> HI! I'm Ella L. Gustilo, a simple person who appreciates the little things in life. A fun fact about me is that I'm a naughty girl, but in a good way.
+                     I’m currently taking up BSIT at CVSU Silang, and in my free time, 
+                    I love hanging out with my friends and going to new places where we can have deep talks about life. 
+                    One unusual thing about me is that I actually enjoy listening to the rants of my friends—it’s always interesting to hear their thoughts and feelings.</p>
+                         <a href="about.html" class="about-btn">About Me →</a>
+            </div>
+        </div>
+    </div>
+    </section>
+
+
+     <!-- Circular Skill Bars Section -->
+     <section class="skills-section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skill-container">
+                <div class="skill-circle">
+                    <canvas class="bar-circle" width="120" height="120"></canvas>
+                    <span>HTML</span>
+                </div>
+                <div class="skill-circle">
+                    <canvas class="bar-circle" width="120" height="120"></canvas>
+                    <span>CSS</span>
+                </div>
+                <div class="skill-circle">
+                    <canvas class="bar-circle" width="120" height="120"></canvas>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="works">
+        <h2>Group Works </h2>
+        <ul>
+            <li>
+                <a href="images/groupwork/LOGINact2.pdf">
+                    <figure>
+                        <img src='images/groupwork/PIC2.png' alt='log in page'>
+                        <figcaption>Log-In Page</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="images/groupwork/Brown Minimalist Login Page Mobile Prototype.pdf">
+                    <figure>
+                        <img src='images/groupwork/Jet Set Go.png' alt='mobile app jet set go'>
+                        <figcaption>Mobile Application </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="images/groupwork/PIC-act1.pdf">
+                    <figure>
+                        <img src='images/groupwork/PIC1.png' alt='website'>
+                        <figcaption>simple website </figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="images/groupwork/PIC1 act1-2.pdf">
+                    <figure>
+                        <img src='images/groupwork/PIC2.png' alt='log-in and registration page'>
+                        <figcaption>Log-In and Registration Page</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="images/groupwork/BLACKPINK.pdf">
+                    <figure>
+                        <img src='images/groupwork/PICS3.png' alt='BLACKPINK WEBSITE'>
+                        <figcaption>Blackpink Website</figcaption>
+                    </figure>
+                </a>
+            </li>
+            <li>
+                <a href="images/groupwork/LOGINact2.pdf">
+                    <figure>
+                        <img src='images/groupwork/REGISTER.png' alt='registration page '>
+                        <figcaption>Registration page</figcaption>
+                    </figure>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+   <!-- Footer -->
+  <footer class="footer" >
+    <hr>
+    <div class="rowft">
+      <div class="colft">
+        <h3>GUSTILO</h3>
+        <i class="fas fa-coffee logo-icon"></i>
+      </div>
+
+      <div class="colft">
+        <h3>Address <div class="underline"><span></span></div></h3>
+        <p>Silang, Cavite</p>
+        <p class="email-id">sc.ella.gustilo@cvsu.edu.ph</p>
+      </div>
+
+      <div class="colft">
+        <h3>Links <div class="underline"><span></span></div> </h3>
+        <ul>
+           <li><a href="index.html" class="nav-link">Home</a></li>
+           <li><a href="about.html" class="nav-link">About</a></li>
+           <li><a href="activity.html" class="nav-link">Activity</a></li>
+           <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="colft">
+        <h3>Contacts <div class="underline"><span></span></div></h3>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1DxdKuW9aE/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/gustilo-source" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/its_ihlx" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:sc.ella.gustilo@pcvsu.edu.ph" target="_blank" class="icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <center> 
+      <p class="copyright">Gustilo © 2026 - All Rights Reserved</p>
+    </center>
+</footer>
+
+    <script>
+
+window.onload = function () {
+    const canvasElements = document.querySelectorAll('.bar-circle');
+
+    function animateCircle(canvas, target, context) {
+        const start = -Math.PI / 2;
+        let loaded = 0;
+
+        function animate() {
+            if (loaded < target) {
+                loaded++;
+                drawCircle();
+                requestAnimationFrame(animate);
+            }
+        }
+
+        function drawCircle() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            context.lineWidth = 12;
+            context.fillStyle = "#000";
+            context.strokeStyle = "#D6AC4B";
+            context.textAlign = "center";
+
+            const radius = Math.min(canvas.width, canvas.height) / 2 - 10; // Ensure the radius fits within the canvas
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+
+            context.beginPath();
+            context.arc(centerX, centerY, radius, start, (Math.PI * 2 * (loaded / 100)) + start, false);
+            context.stroke();
+        }
+
+        animate();
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const canvas = entry.target;
+                const context = canvas.getContext('2d');
+                const skills = [70, 50, 30]; // Replace with actual skill percentages
+                const target = skills[Array.from(canvasElements).indexOf(canvas)];
+
+                // Ensure canvas has a fixed size and maintain aspect ratio
+                const canvasSize = parseInt(getComputedStyle(canvas.parentElement).width);
+                canvas.width = canvasSize;
+                canvas.height = canvasSize;
+
+                animateCircle(canvas, target, context);
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    canvasElements.forEach(canvas => {
+        observer.observe(canvas);
+    });
+};
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("nav-links").classList.toggle("show");
+        });
+    </script>
+</body>
+</html>

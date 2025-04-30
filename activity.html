@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Activity | Gustilo</title>
+    <link rel="icon" type="image/x-icon" href="images/logo1.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<style>
+     *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background: url('images/bg.png') no-repeat center center fixed;
+            background-size: cover;
+        
+        }
+
+    @font-face {
+            font-family: 'Poppin-Regular';
+            src: url('fonts/Poppin-Regular.otf') format('opentype'); 
+        }
+
+        @font-face {
+            font-family: 'Brittany';
+            src: url('fonts/Brittany.otf') format('opentype'); 
+        }
+        @font-face {
+            font-family: 'Brittanyhustle';
+            src: url('fonts/Brittanyhustle.otf') format('opentype'); 
+        }
+        @font-face {
+            font-family: 'poppins';
+            src: url('fonts/poppins_regular.ttf') format('opentype'); 
+        }
+        @font-face {
+            font-family: 'Akira Expanded Demo';
+            src: url('fonts/Akira Expanded Demo.otf') format('opentype'); 
+        }
+
+       /* Navbar styles */
+       .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.1rem 5rem;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+            color: #e07d50;
+        }
+
+        /* Responsive navbar */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.95);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                text-align: center;
+                padding: 1rem 0;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-link {
+                font-size: 1.2rem;
+                padding: 0.5rem 0;
+            }
+        }
+
+        /* Your existing styles (unchanged) */
+        .gallery-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-top: 80px;
+            font-family: 'Akira Expanded Demo', bold;
+            color: #4a3629;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 5px;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        div.gallery {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        div.gallery:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        div.gallery img {
+            width: 110%;
+            height: 340px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        div.gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .quiz-description {
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 1.2rem;
+            color: #333;
+            border-radius: 0 0 12px 12px;
+            transition: background-color 0.3s ease;
+        }
+
+        @media only screen and (max-width: 900px) {
+            .gallery-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+        }
+/* Footer */
+.footer {
+    width: 100%;
+    background-color: #4a3629;
+    color: #ffffff;
+    padding: 1rem 2rem 0.5rem 2rem;
+    margin-top: 3rem;
+    box-sizing: border-box;
+}
+.footer .logo-icon {
+    font-size: 3rem;
+    margin-right: 0.5rem;
+  
+}
+
+    .footer h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .footer p {
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer a {
+      color: #9ca3af;
+      transition: color 0.3s;
+    }
+
+    .footer a:hover {
+      color: #e07d50;
+    }
+
+    .footer .underline {
+        content: "";
+  display: block;
+  width: 80px; 
+  height: 2px;
+  background-color: #fff;
+  margin-top: 8px;
+  margin-left: 0; 
+    }
+
+    .footer .social-icons {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      margin-top: 10px;
+    }
+
+    .footer .social-icons a {
+      color: #ced2d8;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .footer .social-icons a:hover {
+      color: #e07d50;
+    }
+    .footer .colft ul {
+    list-style-type: none; 
+    padding-left: 0; 
+ 
+}
+
+
+    /* Footer Columns */
+    .rowft {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .colft {
+      flex: 1;
+      min-width: 250px;
+      margin: 0.5rem;
+      text-align: left;
+    }
+
+    .colft h3 {
+      font-size: 1.25rem;
+      color: #e07d50;
+      margin-bottom: 1rem;
+    }
+
+    .colft p,
+    .colft a {
+      font-size: 0.875rem;
+      color: #d1d5db;
+    
+    }
+
+    .colft a:hover {
+      color: #e07d50;
+    }
+
+    footer a,
+    .footer p {
+      color: #9ca3af; /* Default color for footer content */
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover,
+    .footer p:hover {
+      color:  #e07d50; /* Yellow color on hover */
+    }
+    /* Footer Responsiveness */
+    @media (max-width: 768px) {
+      .rowft {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .colft {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .footer .underline {
+        margin-left: auto;
+        margin-right: auto;
+        }
+    .footer .social-icons a {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    }
+    
+
+
+</style>
+
+<body>
+    <div class="navbar">
+        <div class="logo-container">
+            <i class="fas fa-coffee logo-icon"></i>
+            <span class="logo-text">Gustilo</span>
+        </div>
+        <button id="menu-toggle" class="menu-toggle">
+            <i class="fas fa-bars menu-icon"></i>
+        </button>
+        <nav id="nav-links" class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="activity.html" class="nav-link">Activity</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </nav>
+    </div>
+
+    <h2 class="gallery-title">Quiz</h2>
+    <p class="quiz-description">A glimpse of our engaging classroom quizzes that showcase our 
+        efforts, learning progress. Here are some of the quizzes we took in class. Each quiz helped us to understand our lessons.
+    </p>
+    
+        <div class="gallery-container">
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/11-min.jpg">
+                    <img src="images/quiz_mid/11-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/16-min.jpg">
+                    <img src="images/quiz_mid/16-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/18-min.jpg">
+                    <img src="images/quiz_mid/18-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/20-min.jpg">
+                    <img src="images/quiz_mid/20-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/19-min.jpg">
+                    <img src="images/quiz_mid/19-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/23.jpg">
+                    <img src="images/quiz_mid/23.jpg" alt="quiz paper">
+                </a>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/21.jpg">
+                    <img src="images/quiz_mid/21.jpg" alt="quiz paper">
+                </a>
+            </div>
+        
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/22.jpg">
+                    <img src="images/quiz_mid/22.jpg" alt="quiz paper">
+                </a>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/p19-min.jpg">
+                    <img src="images/quiz_mid/p19-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/27-min.jpg">
+                    <img src="images/quiz_mid/27-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/lab-92-min.jpg">
+                    <img src="images/quiz_mid/lab-92-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+            <div class="gallery">
+                <a target="_blank" href="images/quiz_mid/m-23-min.jpg">
+                    <img src="images/quiz_mid/m-23-min.jpg" alt="quiz paper">
+                </a>
+            </div>
+        </div>
+        
+
+   <!-- Footer -->
+  <section class="footer" >
+    <hr>
+    <div class="rowft">
+      <div class="colft">
+        <h3>GUSTILO</h3>
+        <i class="fas fa-coffee logo-icon"></i>
+      </div>
+
+      <div class="colft">
+        <h3>Address <div class="underline"><span></span></div></h3>
+        <p>Silang, Cavite</p>
+        <p class="email-id">sc.ella.gustilo@cvsu.edu.ph</p>
+      </div>
+
+      <div class="colft">
+        <h3>Links <div class="underline"><span></span></div> </h3>
+        <ul>
+           <li><a href="index.html" class="nav-link">Home</a></li>
+           <li><a href="about.html" class="nav-link">About</a></li>
+           <li><a href="activity.html" class="nav-link">Activity</a></li>
+           <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
+
+    
+      <div class="colft">
+        <h3>Contacts <div class="underline"><span></span></div></h3>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1DxdKuW9aE/" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://github.com/gustilo-source" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/its_ihlx" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:sc.ella.gustilo@pcvsu.edu.ph" target="_blank" class="icon"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <center> 
+      <p class="copyright">Gustilo © 2026 - All Rights Reserved</p>
+    </center>
+  </section>
+
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            document.getElementById("nav-links").classList.toggle("show");
+        });
+    </script>
+</body>
+</html>
