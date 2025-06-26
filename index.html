@@ -329,11 +329,11 @@
    
 }
 .image-container img {
-   width: 60%;
-    aspect-ratio: 1 / 1;      
+  width: 60%;
+    aspect-ratio: 1 / 1;         /* Force it to be square */
     max-width: 800px;
     object-fit: cover;
-    border-radius: 50%;         
+    border-radius: 50%;          /* Makes it a circle */
     display: block;
 } 
 
@@ -531,10 +531,10 @@
 }
 
 /* Media query for screens smaller than 320px (i.e., mobile screens) */
-@media (max-width: 320px) {
+/* Better mobile responsiveness */
+@media (max-width: 768px) {
     .skills-section {
-        padding: 40px 20px;
-       
+        padding: 30px 20px;
     }
 }
 
