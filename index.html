@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Gustilo</title>
     <link rel="icon" type="image/x-icon" href="images/logo1.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -467,7 +467,7 @@
 
 /* Circular Skill Bars Section */
 .skills-section {
-    padding: 90px 85px;
+    padding: 90px 190px;
     background-image: url('images/bg.png');
     background-repeat: no-repeat;
     background-position: center center;
@@ -531,10 +531,10 @@
 }
 
 /* Media query for screens smaller than 320px (i.e., mobile screens) */
-@media (max-width: 320px) {
-    .skills-container {
-        margin: 10px 10px;
-       
+/* Better mobile responsiveness */
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 30px 20px;
     }
 }
 
